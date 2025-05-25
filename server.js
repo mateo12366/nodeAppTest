@@ -54,8 +54,9 @@ app.use(bodyParser.json());
 //     })
 // });
 
-app.use('/api/v1/users', require('./api/v1/routes/users.routes'))
-app.use('/api/v1/articles', require('/api/v2/routes/articles.routes')); // Ruta para atucilos con la v1 de la API
+app.use('/api/v1/users', require('./api/v1/routes/users.routes'));
+app.use('/api/v1/articles', require('./api/v1/routes/articles.routes')); // Ruta para atucilos con la v1 de la API
+app.use('/api/v1/categories', require('./api/v1/routes/categories.routes'));
 
 //Se incia el servidor en el puesto 4000
 app.listen(app.get('port'),()=>{

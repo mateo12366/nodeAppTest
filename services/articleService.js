@@ -9,6 +9,10 @@ const getAllArticles = async () => {
                 as: "User",
                 attributes: ["id", 'name', 'email']
             },
+            attributes: {
+                exclude: ['createdAt', 'updatedAt']
+            },
+            include: ["categories"]
         });
         return Articles;
     } catch (error) {
@@ -32,6 +36,10 @@ const createArticle = async (title, content, UserId) => {
             content,
             UserId
         });
+        if (newArticle) {
+            const categories = [1,2,3];
+            await newArticle.setCategories(categories);
+        }
         return newArticle;
     } catch (error) {
         return error.message || "Failed to create Article";
