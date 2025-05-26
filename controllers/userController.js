@@ -2,7 +2,7 @@
 const userService = require('../services/userService');
 
 const getAllUsers = async (req, res) => {
-    const allUsers = await userservice.getAllUsers();
+    const allUsers = await userService.getAllUsers();
     if (allUsers) {
         res.status(200).send({ status: "Ok", data: allUsers}); 
     } else {
