@@ -25,7 +25,7 @@ module.exports = {
           }
         },
         onUpdate: 'CASCADE',
-        onDelete: 'reSTRICT'
+        onDelete: 'RESTRICT'
       },
       createdAt: {
         allowNull: false,
